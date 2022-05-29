@@ -1,0 +1,43 @@
+{{>header}}
+<div class="container mt-2">
+  <form class="mx-auto" id="quadratic_values" action="/" method="POST">
+    <div class="form-group">
+      <label for="valueA">Value of A</label>
+      <input type="number" class="form-control" id="valueA">
+    </div>
+    <div class="form-group">
+      <label for="valueB">Value of B</label>
+      <input type="number" class="form-control" id="valueB">
+    </div>
+    <div class="form-group">
+      <label for="valueC">Value of C</label>
+      <input type="number" class="form-control" id="valueC">
+    </div>
+    <button type="submit" id="submit_form" class="btn btn-primary">Calculate</button>
+    <button type="button" id="get_data" class="btn btn-secondary">View Solutions</button>
+  </form>
+  <p id="msg_txt"></p>
+
+</div>
+
+<div class="container mt-3" id="quadraic-solutions">
+  <table class="table" id="datalist">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">A</th>
+        <th scope="col">B</th>
+        <th scope="col">C</th>
+        <th scope="col">First Root</th>
+        <th scope="col">Second Root</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+
+    </tbody>
+  </table>
+</div>
+
+{{>footer}}
+<script src="js/script.js"></script>
