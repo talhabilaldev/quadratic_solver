@@ -7,21 +7,21 @@ $(document).ready(function () {
         var c = $("#valueC").val()
         if (a != "" && b != "" && c != "") {
             $.ajax({
-                url: "http://localhost:3000/quadratic_calculate?a=" + a + "&b=" + b + "&c=" + c,
+                url: "/quadratic_calculate?a=" + a + "&b=" + b + "&c=" + c,
                 type: "GET",
                 success: function (data) {
                     if(data.error){
                         msg.innerHTML = data.error
                     }
                     else if(data._id){
-                        msg.innerHTML = "Quadratic equation has been solved."
+                        msg.innerHTML = "Quadratic equation has been solved. Answer is ("+data.Solution_1+","+data.Solution_2+")"
                     }
                     else{
                         msg.innerHTML = "Could not connect to database."
                     }
                     setTimeout(() => {
                         msg.innerHTML = ""
-                    }, 3000);
+                    }, 5000);
                 }
             });
         }
@@ -31,7 +31,7 @@ $(document).ready(function () {
     })
     $("#get_data").on('click', function (e) {
         $.ajax({
-            url: "http://localhost:3000/quadratic_retrieve",
+            url: "/quadratic_retrieve",
             type: "GET",
             success: function (data) {
                 if(data.error){

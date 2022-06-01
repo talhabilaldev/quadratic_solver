@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://172.17.0.2:27017/quadratic_solutions',{
+mongoose.connect('mongodb://localhost:27017/quadratic_solutions',{
     useNewUrlParser : true
 })
 
